@@ -1,0 +1,9 @@
+- title: "about"
+  href: "/about/"
+
+- title: "archives"
+  subcategories:
+    - subtitle: "Chapter 1"
+      subhref: "/chapter1/"
+    - subtitle: "Chapter 2"
+      subhref: "/chapter2/"

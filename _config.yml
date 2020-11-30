@@ -1,0 +1,52 @@
+# Site settings
+title: The World in Sepia Comic
+email: theworldinsepiacomic@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  A coming-of-age graphic novel.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  theworldinsepia
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+
+destination: _site
+
+# Compress our Css
+sass:
+   style: :compressed
+
+permalink: /:categories/:title/
+
+plugins:
+  - jekyll-feed
+
+# Exclude from processing.
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - Gemfile
+  - Gemfile.lock
+
+header: yes
+header_sm: images/banner-small.jpg
+header_med: images/banner-med.jpg
+header_large: images/banner-large.jpg
+header_xl: images/banner-xl.jpg
+
+# Autogenerate thumbs for comics
+mini_magick:
+
+#Create Thumbs for the Archive Page
+  thumbnail:
+    source: images/comics/
+    destination: /images/comics/thumbs
+    resize: "182x280"
+
+#Autogenerate smaller size for small screens
+  small:
+    source: images/comics/
+    destination: /images/comics/small
+    resize: "350x535"
