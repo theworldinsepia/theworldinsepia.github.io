@@ -53,3 +53,6 @@ mini_magick:
 
 # Google Analytics
 google_analytics: G-MTZZHPZG5Q
+
+feed:
+  posts_limit: 100
