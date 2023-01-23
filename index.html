@@ -11,45 +11,42 @@ sidebar: true
   {% else %}
     <article class="columns small-12 large-offset-1 large-10 comic-page">
   {% endif %}
+
+  <!-- get second post for navigation-->
+  {% assign second_post_index = site.posts | size | minus:1 %}
+  {% for post in site.posts %}
+    {% if forloop.index == second_post_index %}
+      {% assign second_post = post %}
+    {% endif %}
+  {% endfor %}
+
   <nav class="comic-nav">
-  	<nav class="previous-comic">
-  	  {% for post in site.posts limit:1 offset:1 %}
-  	    <a href="{{ site.baseurl }}{{ post.url }}" class="icon-arrow-left hide-for-small">Previous</a>
-  	    <a href="{{ site.baseurl }}{{ post.url }}" class="icon-arrow-left hide-for-large"></a>
-  	  {% endfor %}
-  	</nav>
-  	<nav class="first-comic">
-  	  <a href="{{ site.baseurl }}{{ site.posts.last.url }}">First</a>
-  	</nav>
-  	<nav class="comic-next">
-  	{% for post in site.posts limit:1 offset:1 %}
-  	  <a href="{{ site.baseurl }}/{{ post.categories }}/" class="hide-for-small">Archive<span class="icon-arrow-down"></span></a>
-  	  <a href="{{ site.baseurl }}/{{ post.categories }}/" class="hide-for-large"><span class="icon-arrow-down"></span></a>
-  	{% endfor %}
-  	</nav>
+	<nav class="first-archive">
+	  {% for post in site.posts limit:1 offset:1 %}
+		  <a href="{{ site.baseurl }}/{{ second_post.categories }}" class="hide-for-small">Archive<span class="icon-arrow-down"></span></a>
+		  <a href="{{ site.baseurl }}/{{ second_post.categories }}" class="hide-for-large"><span class="icon-arrow-down"></span></a>
+	  {% endfor %}
+	</nav>
+	<nav class="first-next">
+	  <a href="{{ site.baseurl }}{{second_post.url}}" class="hide-for-small">Next<span class="icon-arrow-right"></span></a>
+	  <a href="{{ site.baseurl }}{{second_post.url}}" class="hide-for-large"><span class="icon-arrow-right"></span></a>
+	</nav>
   </nav>
 
-	{% for post in site.posts limit:1 %}
+  {% assign last_post = site.posts | last %}
+  {{ last_post.content }}
 
-	  {{ post.content }}
-
-	{% endfor %}
   <nav class="comic-nav">
-  	<nav class="previous-comic">
-  	  {% for post in site.posts limit:1 offset:1 %}
-  	    <a href="{{ site.baseurl }}{{ post.url }}" class="icon-arrow-left hide-for-small">Previous</a>
-  	    <a href="{{ site.baseurl }}{{ post.url }}" class="icon-arrow-left hide-for-large"></a>
-  	  {% endfor %}
-  	</nav>
-  	<nav class="first-comic">
-  	  <a href="{{ site.baseurl }}{{ site.posts.last.url }}">First</a>
-  	</nav>
-  	<nav class="comic-next">
-    {% for post in site.posts limit:1 offset:1 %}
-  	  <a href="{{ site.baseurl }}/{{ post.categories }}" class="hide-for-small">Archive<span class="icon-arrow-down"></span></a>
-  	  <a href="{{ site.baseurl }}/{{ post.categories }}" class="hide-for-large"><span class="icon-arrow-down"></span></a>
-  	</nav>
-    {% endfor %}
+    <nav class="first-archive">
+      {% for post in site.posts limit:1 offset:1 %}
+        <a href="{{ site.baseurl }}/{{ second_post.categories }}" class="hide-for-small">Archive<span class="icon-arrow-down"></span></a>
+        <a href="{{ site.baseurl }}/{{ second_post.categories }}" class="hide-for-large"><span class="icon-arrow-down"></span></a>
+      {% endfor %}
+    </nav>
+    <nav class="first-next">
+      <a href="{{ site.baseurl }}{{second_post.url}}" class="hide-for-small">Next<span class="icon-arrow-right"></span></a>
+      <a href="{{ site.baseurl }}{{second_post.url}}" class="hide-for-large"><span class="icon-arrow-right"></span></a>
+    </nav>
   </nav>
   </article>
   </div>
