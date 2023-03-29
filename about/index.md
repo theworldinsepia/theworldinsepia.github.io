@@ -15,8 +15,6 @@ title: about
 
 The website was made using a modified version of the [comical-jekyll-theme](https://github.com/chrisanthropic/comical-jekyll-theme). The font used in this comic is [Back issues BB](https://blambot.com/products/back-issues). The banner font is [Mode Seven](https://www.fontspace.com/modeseven-font-f2369). Comics are drawn using [Clip Studio Paint](https://www.clipstudio.net/en/) and scripted using [Scrivener](https://www.literatureandlatte.com/scrivener/overview).
 
-**The World in Sepia will span five planned chapters. Updates are sporadic, but the plan is to finish the story by the end of 2022. Sign up for the RSS feed to get the latest posts.**
-
 ---
 
 </div>
